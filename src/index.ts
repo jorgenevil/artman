@@ -3,7 +3,11 @@ import express from "express"
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
+function customMiddleware(props:any) {
+  return props
+}
+
+app.get('/', customMiddleware, (req, res) => {
     res.status(200)
     res.json({message: "Hello world"})
 })
