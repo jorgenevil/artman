@@ -1,4 +1,5 @@
 import express from "express"
+import responseRouter from "./response.routes"
 
 const app = express()
 const port = 3000
@@ -6,6 +7,9 @@ const port = 3000
 function customMiddleware(props:any) {
   return props
 }
+
+
+//app.use(responseRouter)
 
 app.get('/', customMiddleware, (req, res) => {
     res.status(200)
